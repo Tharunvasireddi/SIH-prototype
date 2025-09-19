@@ -1,4 +1,5 @@
 import Carousel from "./Carousel";
+import Footer from "./Footer";
 import Marquee from "./marque";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <Carousel />
       <Marquee />
+      <Footer/>
     </>
   );
 };

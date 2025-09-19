@@ -1,28 +1,26 @@
 import { useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import image1 from "../assests/govt-logo.jpg";
+import image2 from "../assests/jharknd_govt.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <nav className="sticky top-0 z-50 shadow-lg bg-white border-b border-gray-200">
+    <nav className="sticky top-0 z-50 shadow-lg bg-white border-b border-gray-200 p-4 border-b-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Left Side: Logo */}
           <div className="flex items-center space-x-4">
-            <img src={image1} alt="Govt Logo" className="h-12 w-auto" />
+            <img src={image2} alt="Govt Logo" className="h-20 w-auto" />
             <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-800 leading-tight">
-                GOVERNMENT OF STATE
+              <span className="font-bold text-lg text-gray-800 leading-tight">
+                GOVERNMENT OF JHARKAND
               </span>
               <span className="text-sm text-gray-600 font-medium">
-                Official Portal
+                Official website of the state
               </span>
             </div>
           </div>
