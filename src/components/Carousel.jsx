@@ -28,11 +28,11 @@ export default function Carousel() {
   return (
     <div className="relative w-full h-[500px] overflow-hidden">
       {/* Image */}
-      <img
+      {/* <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
         className="w-full h-full object-cover transition-all duration-700"
-      />
+      /> */}
 
       {/* Left Button */}
       <button
