@@ -1,3 +1,4 @@
+import { Outlet } from "@tanstack/react-router";
 import Navbar from "./components/Navbar";
 import Carousel from "./components/caurosel";
 import Marquee from "./components/marque";
@@ -7,8 +8,9 @@ const App = () => {
       <div className="bg-black w-full min-h-screen">
         <header>this header it consist of </header>
         <Navbar />
-        <Carousel />
-        <Marquee />
+        <Outlet />
+        {/* <Carousel />
+        <Marquee /> */}
       </div>
     </>
   );
