@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import imgj1 from "../assests/jar-1.jpg";
+import imgj2 from "../assests/jar2.webp";
+import imgj3 from "../assests/jar3.jpg";
+
 export default function Carousel() {
   const images = [
-    "/images/img1.jpg",
-    "/images/img2.jpg", 
-    "/images/img3.jpg",
+    imgj1,
+    imgj2,
+    imgj3,
     "/images/img4.jpg",
     "/images/img5.jpg",
     "/images/img6.jpg",
@@ -14,25 +18,21 @@ export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[500px] overflow-hidden border-b-black">
       {/* Image */}
-      {/* <img
+      <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
         className="w-full h-full object-cover transition-all duration-700"
-      /> */}
+      />
 
       {/* Left Button */}
       <button
