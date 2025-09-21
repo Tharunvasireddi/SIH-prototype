@@ -9,6 +9,7 @@ import dashboardRouter from "./dashboardRout";
 import centralDashBoardRouter from "./centraldashboardRouter";
 import registerPageRouter from "./registerPageRouter";
 import loginPageRouter from "./loginPageRouter";
+import userInterface from "./userInterfaceRouter";
 export const rootRoute = createRootRoute({
   component: App,
 });
@@ -23,4 +24,5 @@ export const routeTree = rootRoute.addChildren([
   centralDashBoardRouter,
   registerPageRouter,
   loginPageRouter,
+  userInterface
 ]);

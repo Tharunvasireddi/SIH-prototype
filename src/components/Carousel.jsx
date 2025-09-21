@@ -6,14 +6,7 @@ import imgj2 from "../assests/jar2.webp";
 import imgj3 from "../assests/jar3.jpg";
 
 export default function Carousel() {
-  const images = [
-    imgj1,
-    imgj2,
-    imgj3,
-    "/images/img4.jpg",
-    "/images/img5.jpg",
-    "/images/img6.jpg",
-  ];
+  const images = [imgj1, imgj2, imgj3];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
