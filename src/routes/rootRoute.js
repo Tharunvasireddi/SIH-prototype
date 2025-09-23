@@ -10,6 +10,8 @@ import centralDashBoardRouter from "./centraldashboardRouter";
 import registerPageRouter from "./registerPageRouter";
 import loginPageRouter from "./loginPageRouter";
 import userInterface from "./userInterfaceRouter";
+import mapviewRouter from "./mapveiwRouter";
+import analyticPage from "./analyticPageRouter";
 export const rootRoute = createRootRoute({
   component: App,
 });
@@ -24,5 +26,7 @@ export const routeTree = rootRoute.addChildren([
   centralDashBoardRouter,
   registerPageRouter,
   loginPageRouter,
-  userInterface
+  userInterface,
+  mapviewRouter,
+  analyticPage,
 ]);
