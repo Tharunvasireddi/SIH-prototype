@@ -12,6 +12,7 @@ import loginPageRouter from "./loginPageRouter";
 import userInterface from "./userInterfaceRouter";
 import mapviewRouter from "./mapveiwRouter";
 import analyticPage from "./analyticPageRouter";
+import categoryProblemsRouter from "./categoryProblemsRouter";
 export const rootRoute = createRootRoute({
   component: App,
 });
@@ -29,4 +30,5 @@ export const routeTree = rootRoute.addChildren([
   userInterface,
   mapviewRouter,
   analyticPage,
+  categoryProblemsRouter,
 ]);
