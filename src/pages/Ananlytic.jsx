@@ -78,17 +78,6 @@ const data = [
   },
 ];
 
-// Assign unique colors per sector
-const COLORS = [
-  "#ef4444", // red
-  "#3b82f6", // blue
-  "#22c55e", // green
-  "#f59e0b", // amber
-  "#8b5cf6", // violet
-  "#ec4899", // pink
-  "#14b8a6", // teal
-];
-
 export default function Analytics() {
   const totalProblems = data.reduce((sum, item) => sum + item.totalProblems, 0);
   const totalResolved = data.reduce((sum, item) => sum + item.resolved, 0);

@@ -4,7 +4,7 @@ import Analytics from "../pages/Ananlytic";
 
 const analyticPage = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/ananlytic",
+  path: "/analytics",
   component: Analytics,
 });
 
