@@ -268,7 +268,6 @@ const getPriorityColor = (priority) => {
 
 export default function CategoryProblems() {
   const params = useParams();
-
   // Decode the URL parameter
   const rawCategory = params?.category || null;
   const category = rawCategory ? decodeURIComponent(rawCategory) : null;
