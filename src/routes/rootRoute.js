@@ -13,6 +13,7 @@ import userInterface from "./userInterfaceRouter";
 import mapviewRouter from "./mapveiwRouter";
 import analyticPage from "./analyticPageRouter";
 import categoryProblemsRouter from "./categoryProblemsRouter";
+import categoryDetailsRouter from "./categoryDetailsRouter";
 export const rootRoute = createRootRoute({
   component: App,
 });
@@ -31,4 +32,5 @@ export const routeTree = rootRoute.addChildren([
   mapviewRouter,
   analyticPage,
   categoryProblemsRouter,
+  categoryDetailsRouter,
 ]);

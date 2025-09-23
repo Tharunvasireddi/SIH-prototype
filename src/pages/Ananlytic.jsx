@@ -210,7 +210,7 @@ export default function Analytics() {
             {data.map((item) => (
               <Link
                 key={item.category}
-                to={`/analytics/category/${encodeURIComponent(item.category)}`}
+                to={`/category/${encodeURIComponent(item.category)}`}
                 className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200 hover:border-gray-300"
               >
                 <div className="flex items-center justify-between">
@@ -270,7 +270,7 @@ export default function Analytics() {
           {data.map((item) => (
             <Link
               key={item.category}
-              to={`/analytics/category/${encodeURIComponent(item.category)}`}
+              to={`/category/${encodeURIComponent(item.category)}`}
               className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-all hover:border-yellow-300 group"
             >
               <div className="flex items-center space-x-3 mb-3">
