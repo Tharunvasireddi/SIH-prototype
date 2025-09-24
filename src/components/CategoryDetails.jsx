@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "@tanstack/react-router";
+import { Link, useLocation, useMatch, useParams } from "@tanstack/react-router";
+import categoryDetailsRouter from "../routes/categoryDetailsRouter";
 import {
   Clock,
   CheckCircle,
@@ -252,11 +253,54 @@ const getPriorityColor = (priority) => {
 };
 
 export default function CategoryDetails() {
-  const params = useParams();
-  const categoryName = params?.category
-    ? decodeURIComponent(params.category)
-    : null;
   const [categoryInfo, setCategoryInfo] = useState(null);
+
+  // Get category (this might be undefined due to routing issues)
+  const { category } = useParams({ from: categoryDetailsRouter.id });
+  console.log("ishifhpif", category);
+  const location = useLocation();
+  console.log(location);
+  // const match = useMatch();
+  // Enhanced debugging
+  console.log("=== CategoryDetails Debug ===");
+  console.log("Raw category:", category);
+  console.log("category type:", typeof category);
+  console.log(
+    "category keys:",
+    category ? Object.keys(category) : "No category"
+  );
+  // console.log("Location:", location);
+  // console.log("Match:", match);
+  // console.log("Current URL:", window.location.pathname);
+  // console.log("Current hash:", window.location.hash);
+  // console.log("============================");
+
+  // Safely extract category name
+  let categoryName = null;
+  if (category && typeof category === "object" && category.category) {
+    try {
+      categoryName = decodeURIComponent(category.category);
+      console.log("Decoded category name:", categoryName);
+    } catch (err) {
+      console.error("Error decoding category name:", err);
+      categoryName = category.category; // fallback to raw value
+      console.log("Fallback category name:", categoryName);
+    }
+  } else {
+    console.log("No category in category or category is invalid");
+
+    // Try to extract from URL manually as fallback
+    const urlPath = window.location.pathname;
+    const categoryMatch = urlPath.match(/\/category\/(.+)$/);
+    if (categoryMatch) {
+      try {
+        categoryName = decodeURIComponent(categoryMatch[1]);
+        console.log("Extracted from URL manually:", categoryName);
+      } catch (err) {
+        console.log("Manual URL extraction failed:", err);
+      }
+    }
+  }
 
   useEffect(() => {
     if (categoryName && categoryData[categoryName]) {
@@ -266,6 +310,23 @@ export default function CategoryDetails() {
     }
   }, [categoryName]);
 
+  if (!category) {
+    return (
+      <div className="max-w-6xl mx-auto mt-8 p-6">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Loading...</h1>
+          <p className="text-gray-600 mb-4">Loading category details...</p>
+          <Link
+            to="/analytics"
+            className="text-yellow-600 hover:text-yellow-700 font-medium"
+          >
+            ← Back to Analytics
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   if (!categoryName || !categoryInfo) {
     return (
       <div className="max-w-6xl mx-auto mt-8 p-6">
@@ -274,7 +335,11 @@ export default function CategoryDetails() {
             Category Not Found
           </h1>
           <p className="text-gray-600 mb-4">
-            The requested category could not be found.
+            The requested category "{categoryName || "Unknown"}" could not be
+            found.
+          </p>
+          <p className="text-sm text-gray-500 mb-4">
+            Available categories: {Object.keys(categoryData).join(", ")}
           </p>
           <Link
             to="/analytics"

@@ -6,6 +6,10 @@ const categoryDetailsRouter = createRoute({
   getParentRoute: () => rootRoute,
   path: "/category/$category",
   component: CategoryDetails,
+  validateSearch: () => ({}),
+  beforeLoad: ({ params }) => {
+    console.log("Route beforeLoad - params:", params);
+  },
 });
 
 export default categoryDetailsRouter;
