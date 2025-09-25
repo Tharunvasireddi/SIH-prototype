@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import imgj1 from "../assests/jar-1.jpg";
-import imgj2 from "../assests/jar2.webp";
-import imgj3 from "../assests/jar3.jpg";
+import imgj2 from "../assests/homepage-1.jpg";
+import imgj1 from "../assests/Gemini_Generated_Image_muf8fkmuf8fkmuf8.png";
+import imgj3 from "../assests/Gemini_Generated_Image_xmpfd2xmpfd2xmpf.png";
 
 export default function Carousel() {
-  const images = [imgj1, imgj2, imgj3];
+  const images = [imgj1,imgj2,imgj3];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
