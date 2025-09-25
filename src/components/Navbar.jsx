@@ -31,7 +31,7 @@ const Navbar = () => {
               {[
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
-                { name: "Features", path: "/features" },
+                { name: "Analytics", path: "/analytics" },
                 { name: "Images", path: "/images" },
                 { name: "Contact Us", path: "/contact" },
               ].map((link, idx) => (
